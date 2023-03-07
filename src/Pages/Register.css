@@ -1,0 +1,27 @@
+.welcomecontainer {
+    text-align: center;
+    background-color: #783F04;
+    color: #FFF;
+    border: 4px solid #000;
+}
+
+.reglogincontainer {
+    background-color: #FF9900;
+    border: 4px solid #000;
+    margin-top: 0.05em;
+}
+
+.reglogineachcontainer {
+    background-color: #FFF;
+    border: 4px solid #000;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding: 0em 3em 0em 3em;
+}
+
+.onboardingbutton {
+    background-color: #085394;
+    border: 3px solid #000;
+    border-radius: 0px;
+    margin-left: em
+}
