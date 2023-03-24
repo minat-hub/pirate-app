@@ -12,13 +12,13 @@ function Dashboard() {
     }
     const handleDelete = (id) => {
 
-        axios.delete("http://127.0.0.1:27017/api/pirates/delete/" + id)
+        axios.delete("http://127.0.0.1:8000/api/pirates/delete/" + id)
             .then(res => console.log(res.data))
             .catch(err => console.error(err))
 
     }
     useEffect(() => {
-        axios.get("http://127.0.0.1:27017/api/pirates")
+        axios.get("http://127.0.0.1:8000/api/pirates")
             .then(res => setPirate(res.data))
             .catch(err => console.error(err))
     }, [Pirate])

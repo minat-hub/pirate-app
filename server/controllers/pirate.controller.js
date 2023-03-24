@@ -1,4 +1,4 @@
-const Pirate = require("../model/model");
+const Pirate = require("../models/pirate.model");
 
 module.exports.findAllPirates = (req, res) => {
     Pirate.find({}).sort({ name: 1 })

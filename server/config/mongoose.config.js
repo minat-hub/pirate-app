@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1/Pirates", {
+mongoose.connect("mongodb://127.0.0.1/crmdb", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })

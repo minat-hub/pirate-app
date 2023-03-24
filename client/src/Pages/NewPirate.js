@@ -34,7 +34,7 @@ const NewPirate = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http:127.0.0.1:27017/api/pirates/new", {
+      .post("http:127.0.0.1:8000/api/pirates/new", {
         name,
         imgUrl,
         treasure,

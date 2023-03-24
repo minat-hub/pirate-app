@@ -12,7 +12,7 @@ const PirateDetails = () => {
     const [hookHand, sethookHand] = useState(false);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:27017/api/pirates/' + id)
+        axios.get('http://127.0.0.1:8000/api/pirates/' + id)
             .then(res => {
                 setPirate(res.data)
                 setpegLeg(!res.data.pegLeg)
@@ -26,7 +26,7 @@ const PirateDetails = () => {
 
     const PegLeg = (e) => {
         e.preventDefault();
-        axios.put('http://127.0.0.1:27017/api/pirates/update/' + id, {
+        axios.put('http://127.0.0.1:8000/api/pirates/update/' + id, {
             pegLeg
         })
             .then(res => window.location.reload(false))
@@ -34,7 +34,7 @@ const PirateDetails = () => {
     }
     const EyePatch = (e) => {
 
-        axios.put('http://127.0.0.1:27017/api/pirates/update/' + id, {
+        axios.put('http://127.0.0.1:8000/api/pirates/update/' + id, {
             eyePatch
         })
             .then(res => { window.location.reload(false) })
@@ -42,7 +42,7 @@ const PirateDetails = () => {
     }
     const HookHand = (e) => {
         e.preventDefault();
-        axios.put('http://127.0.0.1:27017/api/pirates/update/' + id, {
+        axios.put('http://127.0.0.1:8000/api/pirates/update/' + id, {
             hookHand
         })
             .then(res => { window.location.reload(false) })

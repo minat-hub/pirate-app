@@ -28,7 +28,7 @@ function RegisterLogin() {
     const onSubmitHandler = e => {
         e.preventDefault();
 
-        axios.post('http://127.0.0.1:27017/api/users/new', {
+        axios.post('http://127.0.0.1:8000/api/users/new', {
             firstName,
             lastName,
             email,
@@ -49,7 +49,7 @@ function RegisterLogin() {
     const onSubmitHandlerLog = e => {
         e.preventDefault();
 
-        axios.post('http://127.0.0.1:27017/api/users', {
+        axios.post('http://127.0.0.1:8000/api/users', {
             email,
             password,
         })
