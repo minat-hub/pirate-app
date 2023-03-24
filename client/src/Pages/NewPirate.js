@@ -8,18 +8,18 @@ import axios from 'axios';
 
 const NewPirate = () => {
   const [name, setName] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
-  const [treasure, setTreasure] = useState(0);
-  const [phrases, setPhrases] = useState("");
+  const [ImgUrl, setImgUrl] = useState("");
+  const [Treasure, setTreasure] = useState(0);
+  const [Phrases, setPhrases] = useState("");
   const [position, setPosition] = useState("");
   const [pegLeg, setPegLeg] = useState(true);
   const [eyePatch, setEyePatch] = useState(true);
   const [hookHand, setHookHand] = useState(true);
   const [error, setError] = useState({
     name: "",
-    imgUrl: "",
-    treasure: "",
-    phrases: "",
+    ImgUrl: "",
+    Treasure: "",
+    Phrases: "",
     position: "",
   });
 
@@ -34,23 +34,23 @@ const NewPirate = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http:127.0.0.1:8000/api/pirates/new", {
-        name,
-        imgUrl,
-        treasure,
-        phrases,
-        position,
-        pegLeg,
-        eyePatch,
-        hookHand,
+      .post("http://127.0.0.1:8000/api/pirates/new", {
+        name: name,
+        ImgUrl: ImgUrl,
+        Treasure: Treasure,
+        Phrases: Phrases,
+        position: position,
+        pegLeg: pegLeg,
+        eyePatch: eyePatch,
+        hookHand: hookHand,
       })
-      .then(() => navigate("/pirates/"))
+      .then(() => navigate("/pirates"))
       .catch((err) =>
         setError({
           name: err.response.data.errors.name?.message,
-          imgUrl: err.response.data.errors.imgUrl?.message,
-          treasure: err.response.data.errors.treasure?.message,
-          phrases: err.response.data.errors.phrases?.message,
+          ImgUrl: err.response.data.errors.ImgUrl?.message,
+          Treasure: err.response.data.errors.Treasure?.message,
+          Phrases: err.response.data.errors.Phrases?.message,
           position: err.response.data.errors.position?.message,
         })
       );
@@ -112,35 +112,35 @@ const NewPirate = () => {
                 />
               </div>
               <div className="form-group my-2">
-                <label htmlFor="imgUrl">Image URL</label>
+                <label htmlFor="ImgUrl">Image URL</label>
                 <input
                   type="url"
-                  id="imgUrl"
+                  id="ImgUrl"
                   className="form-control"
-                  name="imgUrl"
-                  value={imgUrl}
+                  name="ImgUrl"
+                  value={ImgUrl}
                   onChange={(e) => handleChange(e, setImgUrl)}
                 />
               </div>
               <div>
-                <label htmlFor="treasure"># of Treasure Chests</label>
+                <label htmlFor="Treasure"># of Treasure Chests</label>
                 <input
                   type="number"
-                  id="treasure"
+                  id="Treasure"
                   className="form-control"
-                  name="treasure"
-                  value={treasure}
+                  name="Treasure"
+                  value={Treasure}
                   onChange={(e) => handleChange(e, setTreasure)}
                 />
               </div>
 
               <div className="form-group my-2">
-                <label htmlFor="phrases">Pirate Catch Phrases</label>
+                <label htmlFor="Phrases">Pirate Catch Phrases</label>
                 <textarea
-                  id="phrases"
+                  id="Phrases"
                   className="form-control"
-                  name="phrases"
-                  value={phrases}
+                  name="Phrases"
+                  value={Phrases}
                   onChange={(e) => handleChange(e, setPhrases)}
                 />
               </div>
